@@ -11,7 +11,7 @@ export const Navbar = () => {
                 <Link to="/demo">
                     <div className="dropdown">
 
-				<button class="btn btn-primary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+				<button class="btn btn-primary btn-lg dropdown-toggle me-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     Favorites
   </button>
   <ul class="dropdown-menu">

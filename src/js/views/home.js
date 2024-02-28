@@ -20,7 +20,7 @@ export const Home = () => (
         <a href="#" className="btn bg-transparent text-primary border-primary">
           Learn more!
         </a>
-		<i class="far fa-heart"></i>
+        <i className="far fa-heart" style={{ color:"#F1E040", border: "2px solid #F1E040", borderRadius: "5px", width: "50px", height: "50px", padding: "5px", display: "flex", alignItems: "center", justifyContent: "center" }}></i>
 		</div>
       </div>
     </div>
