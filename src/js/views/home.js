@@ -17,10 +17,10 @@ export const Home = () => (
           bulk of the card's content.
         </p>
 		<div className="d-flex justify-content-between">
-        <a href="#" className="btn bg-transparent text-primary border-primary">
+        <a href="#" className="btn learn-more-btn bg-transparent text-primary border-primary ">
           Learn more!
         </a>
-        <i className="far fa-heart" style={{ color:"#F1E040", border: "2px solid #F1E040", borderRadius: "5px", width: "50px", height: "50px", padding: "5px", display: "flex", alignItems: "center", justifyContent: "center" }}></i>
+        <i className="btn bg-white far fa-heart" style={{ color:"#F1E040", border: "2px solid #F1E040", borderRadius: "5px", width: "50px", height: "50px", padding: "5px", display: "flex", alignItems: "center", justifyContent: "center" }}></i>
 		</div>
       </div>
     </div>

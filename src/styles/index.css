@@ -1,3 +1,11 @@
 /* 
     General Styles
 */
+.learn-more-btn {
+  transition: background-color 0.3s, color 0.3s; /* Add a transition for a smoother color change */
+}
+
+.learn-more-btn:hover {
+  background-color: blue;
+  color: white;
+}

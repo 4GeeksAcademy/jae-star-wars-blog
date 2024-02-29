@@ -7,6 +7,7 @@ import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
+//import { InfoCard} from "./component/InfoCardCard";
 import { Navbar } from "./component/navbar";
 
 //create your first component
