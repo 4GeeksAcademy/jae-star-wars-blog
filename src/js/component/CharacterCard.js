@@ -1,10 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, {useEffect} from "react";
+import { Link, useActionData } from "react-router-dom";
 
 
-export const Navbar = () => {
-    return (
-
+export const CharacterCard = ({character}) => {
+    useEffect(() => {
+      action.getCharacter(character.uid);
+    }, []);
 
 
 <div className="card" style={{ width: "18rem" }}>

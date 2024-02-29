@@ -1,3 +1,6 @@
+
+const BASE_URL = "https://www.swapi.tech/api/"
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -15,6 +18,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
+			getCharacters: async () => {
+				const response = await fetch (BASE_URL + "people"
+				);
+				const body = await response.json
+			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
