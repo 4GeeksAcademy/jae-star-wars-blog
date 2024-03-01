@@ -27,6 +27,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				console.log (Characters)
 				setStore ({Characters: Characters});
 			},
+			getCharacter: async (uid) => {
+				const response = await fetch (BASE_URL + "people/" + uid)
+				const body = await response.json();
+				const character = body.result
+				return character
+
+			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
