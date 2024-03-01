@@ -4,6 +4,7 @@ const BASE_URL = "https://www.swapi.tech/api/"
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			Characters: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -21,7 +22,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getCharacters: async () => {
 				const response = await fetch (BASE_URL + "people"
 				);
-				const body = await response.json
+				const body = await response.json();
+				const Characters = body.results;
+				console.log (Characters)
+				setStore ({Characters: Characters});
 			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
