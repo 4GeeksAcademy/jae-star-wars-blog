@@ -6,6 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			Characters: [],
 			Planet: [],
+			Vehicle:[],
 			demo: [
 				{
 					title: "FIRST",
@@ -51,6 +52,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 				return planet
 
 			},
+			getVehicles: async () => {
+				const response = await fetch (BASE_URL + "vehicles"
+				);
+				const body = await response.json();
+				const Vehicles = body.results;
+				console.log (Vehicles)
+				setStore ({Vehicle: Vehicles});
+			},
+			getVehicle: async (uid) => {
+				const response = await fetch (BASE_URL + "vehicles/" + uid)
+				const body = await response.json();
+				const vehicle = body.result
+				return vehicle
+
+			},
+			
 
 			
 			// Use getActions to call a function within a fuction
@@ -81,3 +98,4 @@ const getState = ({ getStore, getActions, setStore }) => {
 };
 
 export default getState;
+
