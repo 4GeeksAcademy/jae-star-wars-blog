@@ -5,6 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			Characters: [],
+			Planet: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -34,6 +35,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 				return character
 
 			},
+
+			getPlanets: async () => {
+				const response = await fetch (BASE_URL + "planets"
+				);
+				const body = await response.json();
+				const Planets = body.results;
+				console.log (Planets)
+				setStore ({Planet: Planets});
+			},
+			getPlanet: async (uid) => {
+				const response = await fetch (BASE_URL + "planets/" + uid)
+				const body = await response.json();
+				const planet = body.result
+				return planet
+
+			},
+
+			
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");

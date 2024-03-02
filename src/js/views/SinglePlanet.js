@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router";
 
-export const SinglePerson = (props) => {
+export const SinglePlanet = (props) => {
   const params = useParams();
   {
     uid: "some-value";
@@ -10,17 +10,16 @@ export const SinglePerson = (props) => {
   const [detail, setDetail] = useState();
   useEffect(() => {
     actions
-      .getCharacter(params.uid)
-      .then((detailCharacter) => setDetail(detailCharacter));
+      .getPlanet(params.uid)
+      .then((detailPlanet) => setDetail(detailPlanet));
   }, []);
   return (
     <React.Fragment>
       {detail !== undefined ? (
         <div className="d-flex flex-column">
-          <h2>hello person with id: {params.uid}</h2>
-          <p>{detail.properties.eye_color}</p>
-          <p>{detail.properties.eye_color}</p>
-          <p>{detail.results.description}</p>
+          <h2>hello planet with id: {params.uid}</h2>
+          <p>{detail.properties.population}</p>
+          <p>{detail.properties.terrain}</p>
         </div>
       ) : null}
     </React.Fragment>

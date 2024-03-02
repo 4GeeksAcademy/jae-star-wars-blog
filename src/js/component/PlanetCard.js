@@ -2,34 +2,33 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const CharacterCard = ({ character, index }) => {
+export const PlanetCard = ({ planet, index }) => {
   const { store, actions } = useContext(Context);
   const [detail, setDetail] = useState();
   useEffect(() => {
     actions
-      .getCharacter(character.uid)
-      .then((detailCharacter) => setDetail(detailCharacter));
+      .getPlanet(planet.uid)
+      .then((detailPlanet) => setDetail(detailPlanet));
   }, []);
 
   return (
-    <div className="card mx-2" style={{ minWidth: "18rem" }} key={character.uid}>
+    <div className="card mx-2" style={{ width: "18rem" }} key={planet.uid}>
       <img
         src="https://placehold.co/400x200"
         className="card-img-top"
-        alt="Character"
+        alt="Planet"
       />
       <div className="card-body">
-        <h5 className="card-title">{character.name}</h5>
+        <h5 className="card-title">{planet.name}</h5>
         <p className="card-text">
-          Gender: {detail?.properties.gender}
+          Population: {detail?.properties.population}
           <br />
-          Hair color: {detail?.properties.hair_color}
+          Terrain: {detail?.properties.terrain}
           <br></br>
-          Eye color: {detail?.properties.eye_color}
         </p>
         <div className="d-flex justify-content-between">
           <Link
-            to={"/people/" + character.uid}
+            to={"/planets/" + planet.uid}
             className="btn bg-transparent text-primary border-primary hover-blue"
           >
             Learn more!
